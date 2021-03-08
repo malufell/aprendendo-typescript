@@ -6,9 +6,7 @@ Minhas anotações sobre a [excelente série de vídeos](https://www.youtube.com
 - Documentação oficial: https://www.typescriptlang.org/
 
 
-TypeScript adiciona novas funcionalidades ao JavaScript (é um superset)!
-
-No final, o TS compila para JS, o resultado vai ser em JS para ser interpretado. Posso ter arquivo .ts convivendo com .js. a sintaxe dos dois é a mesma! 
+TypeScript adiciona novas funcionalidades ao JavaScript (é um superset)! No final, o TS compila para JS, o resultado vai ser em JS para ser interpretado. Posso ter arquivo .ts convivendo com .js. a sintaxe dos dois é a mesma! 
 
 - vantagens de usar o TS:
   - Exemplo do que o TS resolve com a tipagem de dados:
