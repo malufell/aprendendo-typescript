@@ -360,14 +360,9 @@ CharAccount { name: 'João', age: 30, nickname: 'scott', level: 3 }
 
 E agora entram os Modifiers, recurso muito legal do TS!
 
-</details>
+<br>
 
----
-
-## Modifiers
-
-<details>
-  <summary>Conteúdo!</summary>
+### Modifiers
 
 - **PRIVATE:** Se eu quiser definir que uma propriedade não pode ser chamada (e ai nem vai ser alterada) em outro lugar além daquele em que foi definido (do lado de fora da classe, digamos assim).
 
@@ -507,12 +502,10 @@ class UserAccount {
     age: number;
 //...restante segue igual ao código anterior, apenas não dá o erro
 ```
-</details>
 
-## Get e Set
+<br>
 
-<details>
-  <summary>Conteúdo!</summary>
+### Get e Set
 
 - get = podemos pegar valores e propriedades de dentro da classe. ele funciona como uma função, mas é chamado como uma propriedade que retorna o que foi definido.
 
