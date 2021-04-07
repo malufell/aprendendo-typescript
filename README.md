@@ -30,7 +30,6 @@ TypeScript adiciona novas funcionalidades ao JavaScript (é um superset)! No fin
   - erros nem sempre estão claros ou são enormes e ruins de entender
 
 <br>
-Mas num geral, se a pessoa sabe JS, praticamente já sabe TS! 
 
 Algumas considerações sobre o TS:
 
@@ -43,6 +42,9 @@ Algumas considerações sobre o TS:
 
 
 ## Praticando
+
+<details>
+  <summary>Conteúdo!</summary>
 
 Essa função me permite concatenar números ao invés de somar:
 
@@ -107,8 +109,12 @@ button.addEventListener("click", function(){
     console.log(sum(Number(input1.value), Number(input2.value)))
 })
 ``` 
-
+</details>
+  
 ## Configurando o TypeScript - TSconfig
+
+<details>
+  <summary>Conteúdo!</summary>
 
 Enquanto não existe o TSconfig, o código pra compilar um arquivo é `tsc index.ts --watch` no cmder.
 
@@ -125,8 +131,12 @@ Importante: agora que o arquivo "tsconfig.json" existe, o TS já vai compilar to
 Agora, para compilar basta usar o comando `tsc`.
 
 <br>
+</details>
 
 ## Criando os tipos - types
+
+<details>
+  <summary>Conteúdo!</summary>
 
 Esses são alguns básicos!
 
@@ -262,6 +272,7 @@ Neste caso, será obrigatório preencher todas as informações dos dois types q
 
 ### Type inference
 
+
 Não é obrigatório tipar todos os meus dados! A inferência faz isso quando entende o que estou passando, exemplo:
 
 ```javascript
@@ -270,9 +281,13 @@ let message = "mensagem abc";
 
 Como estou passando uma string, ele entende que é string, não preciso definir o type. Se eu tentar mudar o valor para um número, vai dar erro :) 
 
+</details>
 ---
 
 ## Classes
+
+<details>
+  <summary>Conteúdo!</summary>
 
 Não são obrigatórias no TS.
 
@@ -335,7 +350,12 @@ CharAccount { name: 'João', age: 30, nickname: 'scott', level: 3 }
 
 E agora entram os Modifiers, recurso muito legal do TS!
 
+</details>
+
 ### Modifiers
+
+<details>
+  <summary>Conteúdo!</summary>
 
 - **PRIVATE:** Se eu quiser definir que uma propriedade não pode ser chamada (e ai nem vai ser alterada) em outro lugar além daquele em que foi definido (do lado de fora da classe, digamos assim).
 
@@ -475,8 +495,12 @@ class UserAccount {
     age: number;
 //...restante segue igual ao código anterior, apenas não dá o erro
 ```
+</details>
 
 ## Get e Set
+
+<details>
+  <summary>Conteúdo!</summary>
 
 - get = podemos pegar valores e propriedades de dentro da classe. ele funciona como uma função, mas é chamado como uma propriedade que retorna o que foi definido.
 
@@ -533,7 +557,14 @@ Retorno:
 10
 ```
 
- ## Interfaces
+</details>
+
+---
+
+## Interfaces
+
+<details>
+  <summary>Conteúdo!</summary>
  
 São muitos famosas no typescript porque existem somente no TS (JS puro não).
 
@@ -649,8 +680,14 @@ class CreateGame implements Game {
     }
 }
 ```
+</details>
+
+---
 
 ## Quando utilizar Alias ou Interface
+
+<details>
+  <summary>Conteúdo!</summary>
 
 Os dois recursos são muito parecidos!
 
@@ -758,12 +795,14 @@ type JQueryT = { b: string } //da erro
 
 O MAIS importante é ter **consistência**, se o projeto inteiro já está usando interface, é melhor assim, da mesma forma se estiver usando type alias.
 
+</details>
 
 ---
 
 ## Generics 
 
-Um dos conceitos mais complicados do TS.
+<details>
+  <summary>Conteúdo!</summary>
 
 - Serve para trazer um pouco de flexibilidade à linguagem tipada
 - Os métodos ficam mais genéricos para permitir diferentes tipos de entrada e facilitar a reutilização do código
@@ -775,7 +814,6 @@ Um dos conceitos mais complicados do TS.
   - Utilizado para quando eu quero definir um método que pode receber mais de um type, mas diferente do union (string | number) eu quero definir que será apenas de um desses tipos, então: depois que eu definir na chamada do método, ou é um tipo ou é outro tipo, mas não pode ser os dois!
   - A definição é feita diretamente na chamada do método
   - Se eu quiser colocar boolean na chamada do método, não funciona, pq na função informei apenas number ou string (exemplo)
-
 
 ```javascript
 function useState<S extends number | string>(){ //definição do generic
@@ -838,8 +876,14 @@ console.log(newState.getState()) //erro
 
 - trecho "`= string`" não tem relação com o que está a esquerda no código, serve para indicar o tipo padrão (default).
 
+</details>
+
 --- 
+
 ## Type Utilities
+
+<details>
+  <summary>Conteúdo!</summary>
 
 São feitos com base nos generics. São utilitários para trabalhar com os types, servem para quando queremos fazer operações em cima dos próprios types.
 
@@ -954,3 +998,4 @@ const todo4 : TodoPreview2 = {
 - Se quero pegar quase todas as propriedades, basta omitir as poucas que não quero. 
 - Se quero pegar somente poucas, utilizar o pick nelas.
 
+</details>
