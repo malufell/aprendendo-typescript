@@ -1004,3 +1004,75 @@ const todo4 : TodoPreview2 = {
 - Se quero pegar somente poucas, utilizar o pick nelas.
 
 </details>
+
+---
+
+## Dica para deixar o autocomplete ainda melhor
+
+Usar const assertions: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-4.html#const-assertions
+
+É um recurso do typescript que pode ser utilizado com valores que não mudam em tempo de execução, como é o caso das definições do theme no projeto com React!
+
+Na última linha, basta colocar `as const` e pronto, só passando o mouse por cima já mostra o valor:
+
+- **Definição do theme:** em "src/styles/theme.ts":
+
+```javascript
+export default {
+  colors: {
+    primary: '#F231A5',
+    secondary: '#3CD3C1',
+    mainBg: '#06092B', //cor de fundo
+    white: '#FAFAFA',
+    black: '#030517',
+    lightGray: '#EAEAEA',
+    gray: '#8F8F8F',
+    darkGray: '#2E2F42'
+  }
+} as const
+```
+
+Agora posso facilmente saber os valores de cada atributo:
+
+![image](https://user-images.githubusercontent.com/62160705/113924871-b7e9cd00-97c0-11eb-8e74-dc76ea2e330d.png)
+
+---
+
+## Typecheck para testar o TS antes do next build
+
+Alguns pontos do meu projeto não vão quebrar a aplicação se tiver problema rodando em desenvolvimento, exemplo abaixo:
+
+Aqui tenho um problema, mas o projeto continua rodando normalmente em dev:
+
+![image](https://user-images.githubusercontent.com/62160705/113925147-0d25de80-97c1-11eb-9998-3001792c9863.png)
+
+`info - ready on http://localhost:3000`
+
+O problema é quando eu for colocar no ar, se algum erro desses acabar passando, vai quebrar a aplicação! Pra não ter que rodar o build, posso criar um script no meu projeto que irá realizar essa verificação:
+
+- em package.json:
+
+```javascript
+"scripts": {
+    ...
+    "typecheck": "tsc --project tsconfig.json --noEmit",
+  },
+```
+
+Ao rodar o comando ele vai mostrar que existe um problema:
+
+```console
+C:\Users\maluf\Projetos\React avançado com NextJS\ecommerce\client (main -> origin)
+λ npm run typecheck
+
+> client@0.1.0 typecheck C:\Users\maluf\Projetos\React avançado com NextJS\ecommerce\client
+> tsc --project tsconfig.json --noEmit
+
+src/components/Ribbon/index.tsx:15:3 - error TS2322: Type '"black"' is not assignable to type 'RibbonColors'.
+
+15   color = 'black',
+     ~~~~~
+
+
+Found 1 error.
+``` 
