@@ -2,6 +2,8 @@
 
 Minhas anotações sobre a [excelente série de vídeos](https://www.youtube.com/watch?v=mRixno_uE2o&list=PLlAbYrWSYTiPanrzauGa7vMuve7_vnXG_&index=4) que o Willian Justen disponibilizou gratuitamente no youtube.
 
+<details>
+  <summary>Introdução!</summary>
 
 - Documentação oficial: https://www.typescriptlang.org/
 
@@ -40,6 +42,9 @@ Algumas considerações sobre o TS:
 - Serve para qualquer complexidade de projeto
 - Não é o mesmo que "PropTypes" (aquela lib do react), pq ela não bloqueia nada, nem da erro, o máximo que faz é informar um alerta no console log. O TS sim nos bloqueia. Se usar o TS, não precisa usar o PropTypes!
 
+</details>
+
+---
 
 ## Praticando
 
@@ -110,7 +115,9 @@ button.addEventListener("click", function(){
 })
 ``` 
 </details>
-  
+
+---
+
 ## Configurando o TypeScript - TSconfig
 
 <details>
@@ -132,6 +139,8 @@ Agora, para compilar basta usar o comando `tsc`.
 
 <br>
 </details>
+
+---
 
 ## Criando os tipos - types
 
@@ -282,6 +291,7 @@ let message = "mensagem abc";
 Como estou passando uma string, ele entende que é string, não preciso definir o type. Se eu tentar mudar o valor para um número, vai dar erro :) 
 
 </details>
+
 ---
 
 ## Classes
@@ -352,7 +362,9 @@ E agora entram os Modifiers, recurso muito legal do TS!
 
 </details>
 
-### Modifiers
+---
+
+## Modifiers
 
 <details>
   <summary>Conteúdo!</summary>
